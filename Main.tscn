@@ -1,0 +1,89 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://trojanhorse.jpg" type="Texture" id=1]
+[ext_resource path="res://Main/Main.gd" type="Script" id=2]
+[ext_resource path="res://Themes/Main.tres" type="Theme" id=3]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.168627, 0.156863, 0.156863, 1 )
+
+[node name="Login" type="Button" parent="."]
+margin_left = 801.0
+margin_top = 73.0
+margin_right = 870.0
+margin_bottom = 121.0
+text = "Login"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 216.0
+margin_top = 83.0
+margin_right = 752.0
+margin_bottom = 114.0
+align = 1
+
+[node name="ItemList" type="ItemList" parent="."]
+visible = false
+margin_left = -179.0
+margin_top = 111.0
+margin_right = -83.0
+margin_bottom = 191.0
+items = [ "Trojan Horse", ExtResource( 1 ), false, "Item 1", null, false ]
+icon_mode = 0
+
+[node name="Options" type="OptionButton" parent="."]
+margin_left = 87.0
+margin_top = 84.0
+margin_right = 207.0
+margin_bottom = 113.0
+text = "Type"
+align = 1
+items = [ "Type", null, false, 0, null, "Rootkit", null, false, 1, null, "Trojan Horse", null, false, 2, null ]
+selected = 0
+
+[node name="TextEdit" type="TextEdit" parent="."]
+visible = false
+margin_left = 156.0
+margin_top = 144.0
+margin_right = 814.0
+margin_bottom = 459.0
+theme = ExtResource( 3 )
+text = "\"Binary code analysis is crucial in various software engineering tasks, such as malware detection, code refactoring, and plagiarism detection...\" -Hongfa Xue and Shaowen Sun"
+readonly = true
+wrap_enabled = true
+
+[node name="Welcome" type="Label" parent="."]
+visible = false
+margin_left = 788.0
+margin_top = 87.0
+margin_right = 981.0
+margin_bottom = 113.0
+
+[node name="Warning" type="Label" parent="."]
+margin_left = 363.0
+margin_top = 21.0
+margin_right = 592.0
+margin_bottom = 73.0
+align = 1
+
+[node name="Label" type="Label" parent="."]
+margin_left = 212.0
+margin_top = 117.0
+margin_right = 737.0
+margin_bottom = 336.0
+text = "\"Binary code analysis is crucial in various software engineering tasks, such as malware detection, code refactoring, and plagiarism detection...\" -Hongfa Xue and Shaowen Sun"
+align = 1
+valign = 1
+autowrap = true
+
+[connection signal="pressed" from="Login" to="." method="_on_Button_pressed"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="item_selected" from="ItemList" to="." method="_on_ItemList_item_selected"]
+[connection signal="item_selected" from="Options" to="." method="_on_Options_item_selected"]
