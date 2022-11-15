@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/UserProfileList.gd" type="Script" id=1]
+
+[node name="UserProfileList" type="ItemList"]
+margin_left = 1746.0
+margin_top = 26.0
+margin_right = 1897.0
+margin_bottom = 66.0
+items = [ "Hello!", null, false, "Logout", null, false ]
+script = ExtResource( 1 )
+
+[connection signal="item_selected" from="." to="." method="_on_UserProfileList_item_selected"]
+[connection signal="mouse_entered" from="." to="." method="_on_UserProfileList_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_UserProfileList_mouse_exited"]
